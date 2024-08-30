@@ -34,7 +34,7 @@ public class RestApiServiceImpl implements RestApiService {
         String json = String.format("{\"followerUsername\": \"%s\", \"followedUsername\": \"%s\"}", follower, followed);
         RequestBody body = RequestBody.create(json, MediaType.parse("application/json"));
 
-        Supplier<String> successMessage = () -> "wal" + follower + " empezo a seguir a " + followed + "wal";
+        Supplier<String> successMessage = () -> follower + " empezo a seguir a " + followed;
         return executePostRequest(endpoint, body, successMessage);
     }
 
